@@ -20,7 +20,8 @@ const FriendsList = () => {
         <div className='friendsList'>
             {friends ? friends.map((friend, idx) =>(
                 <div className='usrFriend' key={idx}>
-                <p>{friend.name}, Age: {friend.age}</p>
+                <p>Name: {friend.name}</p>
+                <p>Age: {friend.age}</p>
                 <p>Email: {friend.email}</p>
                 </div>
             )) : <p>Loading your friends.. </p>}

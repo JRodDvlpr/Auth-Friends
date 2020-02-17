@@ -1,33 +1,20 @@
 import React from 'react';
 
-import { withRouter, Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const Nav = ({ logout }) => {
+const Nav = ({ logout,location, history }) => {
 
     return (
         <div className='navBar'>
             
-            {localStorage.getItem('token') && (
-            <Nav>
-              <Link to='/profile'>
-                <button>Profile</button>
-              </Link>
-            </Nav>
-            )}
+            <button onClick={() => history.push('/profile')}>Profile</button>
 
-            {localStorage.getItem('token') && (
-            <Nav>
-              <Link to='/addfriend'>
-                <button>Add Friend</button>
-              </Link>
-            </Nav>
-            )}
-            
-
+            <button onClick={() => history.push(`${location.pathname}/addfriend`)}>Add Friend</button>       
             <button onClick={logout}>Logout</button>
 
         </div>
     )
 }
 
+// withRouter will pass updated match, location, and history props to the wrapped component whenever it renders 
 export default withRouter(Nav);
