@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 import { axiosWithAuth } from './axiosWithAuth';
 
+//Styling  Library
+import { Button, Form, Input } from 'antd';
+
 const AddFriend = () => {
  
   const [isLoading, setIsLoading] = useState(false);
@@ -15,6 +18,7 @@ const AddFriend = () => {
 
   //Input state handler
   const handleInput = e => {
+    e.preventDefault()
     setInputs({
       ...inputs,
       [e.target.name]: e.target.value
@@ -46,18 +50,18 @@ const AddFriend = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="addFriends">
+    <Form onSubmit={handleSubmit} className="addFriends">
 
-      <h1>{isLoading ? 'Adding Friend. to your list..' : 'Add a Friend'}</h1>
+      {/* <h1>{isLoading ? 'Adding Friend. to your list..' : 'Add a Friend'}</h1> */}
 
-      <input type="text" name="name" value={inputs.name} onChange={handleInput} placeholder="Enter Name" required />
+      <Input type="text" name="name" value={inputs.name} onChange={handleInput} placeholder="Enter Name" required />
 
-      <input type="number" name="age" value={inputs.age} onChange={handleInput} placeholder="Enter Age" required />
+      <Input type="number" name="age" value={inputs.age} onChange={handleInput} placeholder="Enter Age" required />
 
-      <input type="email" name="email" value={inputs.email} onChange={handleInput} placeholder="Enter Email" required />
+      <Input type="email" name="email" value={inputs.email} onChange={handleInput} placeholder="Enter Email" required />
 
-      <button type="submit">Add Friend</button>
-    </form>
+      <Button type="primary" htmlType="submit" loading={isLoading}>Add Friend</Button>
+    </Form>
   )
 }
 

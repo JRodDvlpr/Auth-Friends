@@ -7,12 +7,10 @@ import './App.css';
 
 // Components
 import PrivateRoute from './components/PrivateRoute';
+
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
-// import AddFriend from './components/AddFriend';
-// import Nav from './components/Nav';
-
-
+import Landing from './components/Landing';
 
 
 
@@ -33,8 +31,9 @@ const App = () => {
         <PrivateRoute path="/profile">
           <UserProfile />
         </PrivateRoute>
-
-        <Route path='/' component={Login} />
+        
+        <Route exact path='/login' component={Login} />
+        <Route path='/' component={Landing} />
       </Switch>
       
     </div>

@@ -13,6 +13,7 @@ import AddFriend from './AddFriend';
 
 const UserProfile = props => {
 
+    // logout will remove the token, push to history we redirect to the login page
     const logout = () => {
     sessionStorage.removeItem('token');
     props.history.push('/login');
@@ -33,6 +34,6 @@ const UserProfile = props => {
   )
 }
 
-//Needed to use 'withRouter' so I can access the props.history
-//Could also instead use the useHistory hook.
+// withRouter will pass updated match, location, and history props to the wrapped component whenever it renders
+
 export default withRouter(UserProfile);

@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 
+//Styling Library
+import { Button, Form, Spin, Input} from 'antd';
+
 import axios from 'axios';
 
 const Login = ({history}) => {
@@ -8,6 +11,7 @@ const Login = ({history}) => {
     const [inputs, setInput] = useState({
         username: '',
         password: ''
+        
     });
 
     // loader 
@@ -44,18 +48,18 @@ const Login = ({history}) => {
 
     return (
 
-        <form className='loginForm' onSubmit={loginHandle}>
+        <Form className='loginForm' onSubmit={loginHandle}>
 
-            <h1>{isLoading ? 'Loggin In to your profile..' : 'Login'}</h1>
+            <h1>{isLoading ? <Spin className='spinner' size='large'/> : 'Login'}</h1>
 
-            <input type='text' name='username' value={inputs.username} onChange={inputHandle} placeholder="Username" required />
+            <Input type='text' name='username' value={inputs.username} onChange={inputHandle} placeholder="Username" required />
 
-            <input type='password' name='password' value={inputs.password} onChange={inputHandle} placeholder='Password' required />
+            <Input type='password' name='password' value={inputs.password} onChange={inputHandle} placeholder='Password' required />
 
-            <button>Login</button>
+            <Button type="primary" icon="poweroff" htmlType="submit">Login</Button>
 
 
-        </form>
+        </Form>
     )
 }
 

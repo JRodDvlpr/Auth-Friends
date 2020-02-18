@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Styling Library
+import { Button} from 'antd';
+
 import { withRouter } from 'react-router-dom';
 
 const Nav = ({ logout,location, history }) => {
@@ -7,10 +10,12 @@ const Nav = ({ logout,location, history }) => {
     return (
         <div className='navBar'>
             
-            <button onClick={() => history.push('/profile')}>Profile</button>
+            <div>
+            <Button onClick={() => history.push('/profile')}>Profile</Button>
 
-            <button onClick={() => history.push(`${location.pathname}/addfriend`)}>Add Friend</button>       
-            <button onClick={logout}>Logout</button>
+            <Button onClick={() => history.push(`${location.pathname}/addfriend`)}>Add Friend</Button>       
+            <Button onClick={logout}>Logout</Button>
+            </div>
 
         </div>
     )

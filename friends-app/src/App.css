@@ -1,5 +1,9 @@
+/*ANTD Library*/
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
+  height: 900px;
 }
 
 .App-logo {
@@ -35,4 +39,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media only screen and (min-width: 600px){
+.friendsList{
+  display: flex;
+  align-self: auto;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 30%;
+  margin: auto;
+  margin-top: 30px;
+  height: auto;
+
+
+}
+
+.usrFriend{  
+  width: 100%;
+}
+}
+
+.landingPage{
+  padding-top: 300px;
+  height: 100%;
+  background-image: url(./img/steven-pahel-645g50Mxy8s-unsplash.jpg);
+  background-size: cover;
+}
+
+.spinner{
+margin: auto;
+margin-top: 40px;
+}
+
+.navBar{
+  background-color: #61dafb;
+  height: 60px;
+  margin: auto;
 }
