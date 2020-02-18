@@ -50,13 +50,14 @@ const Login = ({history}) => {
 
         <Form className='loginForm' onSubmit={loginHandle}>
 
-            <h1>{isLoading ? <Spin className='spinner' size='large'/> : 'Login'}</h1>
+            <h1>{isLoading ? <Spin className='spinner'/> : 'Login'}</h1>
 
+            <div className='loginInput'>
             <Input type='text' name='username' value={inputs.username} onChange={inputHandle} placeholder="Username" required />
 
             <Input type='password' name='password' value={inputs.password} onChange={inputHandle} placeholder='Password' required />
-
-            <Button type="primary" icon="poweroff" htmlType="submit">Login</Button>
+            </div>
+            <Button id='loginbtn' type="primary" icon="poweroff" htmlType="submit">Login</Button>
 
 
         </Form>

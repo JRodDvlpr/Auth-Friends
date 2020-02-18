@@ -42,23 +42,27 @@
 }
 
 
-@media only screen and (min-width: 600px){
-.friendsList{
-  display: flex;
-  align-self: auto;
-  justify-content: space-around;
-  margin-top: 20px;
-  width: 30%;
-  margin: auto;
-  margin-top: 30px;
-  height: auto;
-
-
-}
 
 .usrFriend{  
   width: 100%;
 }
+
+.loginForm{
+  margin: auto;
+  margin-top: 60px;
+  width: 60%;
+  padding: 10px;
+  border: 1px solid lightcoral;
+}
+
+.addFriends{
+  width: 40%;
+  margin: auto;
+}
+
+.navbtn{
+
+  margin: auto;
 }
 
 .landingPage{
@@ -77,4 +81,114 @@ margin-top: 40px;
   background-color: #61dafb;
   height: 60px;
   margin: auto;
+}
+
+#loginbtn {
+  margin: 20px;
+}
+
+.friendsList{
+  display: flex;
+  align-self: auto;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  height: auto;
+
+}
+
+@media only screen and (max-width: 550px){
+
+  .loginForm{
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid lightcoral;
+  }
+  
+  .loginInput{
+    width: 90%;
+  }
+
+  .friendsList{
+    display: flex;
+    align-self: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    height: auto;
+  
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+  .friendsList{
+    display: flex;
+    align-self: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    height: auto;
+  
+  }
+
+  .loginForm{
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid lightblue;
+  }
+}
+
+@media only screen and (max-width: 850px){
+  .friendsList{
+    display: flex;
+    align-self: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    height: auto;
+  
+  }
+
+  .loginForm{
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid lightblue;
+  }
+}
+
+@media only screen and (max-width: 980px){
+  .loginForm{
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid blue;
+  }
+
+  .friendsList{
+    display: flex;
+    align-self: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    height: auto;
+  
+  }
 }

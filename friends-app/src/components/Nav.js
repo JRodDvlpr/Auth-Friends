@@ -3,15 +3,17 @@ import React from 'react';
 //Styling Library
 import { Button} from 'antd';
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 const Nav = ({ logout}) => {
 
     return (
         <div className='navBar'>
             
-            <div>
-  
+            <div className="navbtn">
+            <Link to="/">
+            <Button>Home</Button>
+            </Link>
             <Button onClick={logout}>Logout</Button>
             </div>
 

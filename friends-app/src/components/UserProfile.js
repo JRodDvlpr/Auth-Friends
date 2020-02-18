@@ -13,7 +13,7 @@ import { Spin, Form, Input, Button } from 'antd';
 
 const UserProfile = props => {
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [friends, setFriends ] = useState([]);
 
@@ -31,6 +31,7 @@ const UserProfile = props => {
         .then(res => {
             console.log(res.data)
             setFriends(res.data);
+            setIsLoading(false)
             console.log(res.data)
         })
     .catch(error => console.log(error));
@@ -40,7 +41,7 @@ const UserProfile = props => {
     e.preventDefault();
    
     // User is notified the data is being submitted
-    setIsLoading(true);
+   
 
     axiosWithAuth()
       .post('/friends', newFriends)
@@ -117,7 +118,7 @@ const UserProfile = props => {
 
        {/* displays all my friends */}
        <div>
-         <h1>Friends</h1>
+         <h1>Friends List</h1>
       <div className='friends'>
         {isLoading ? (
           <Spin /> ) : (friends.map(friend =>

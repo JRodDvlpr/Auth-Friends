@@ -86,7 +86,7 @@ const FriendsList = props => {
                 }
 
                 {edit && (
-                    <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <input
                     type="text"
                     name="name"
