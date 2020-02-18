@@ -39,7 +39,7 @@ const Login = ({history}) => {
             localStorage.setItem('token', res.data.payload);
             console.log(res)
             //redirect to profile 
-            history.push('/profile');
+            history.push('/friends');
         })
         .catch(err => console.log(Error))
     }

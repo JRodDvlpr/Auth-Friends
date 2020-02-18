@@ -11,7 +11,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import Landing from './components/Landing';
-
+import Friends from './components/Friends';
 
 
 const App = () => {
@@ -23,17 +23,18 @@ const App = () => {
 
       {/* This should redirect the user if they have logged in already and have their token */}
       {   
-      sessionStorage.getItem('token') ? <Redirect to="/profile" /> : null
+      sessionStorage.getItem('token') ? <Redirect to="/friends" /> : null
       }
     
 
       <Switch>
-        <PrivateRoute path="/profile">
-          <UserProfile />
-        </PrivateRoute>
+
+        <PrivateRoute exact path="/friends" component={UserProfile} />
+        <PrivateRoute exact path="/friends/:id" component={Friends} />
         
         <Route exact path='/login' component={Login} />
         <Route path='/' component={Landing} />
+        
       </Switch>
       
     </div>

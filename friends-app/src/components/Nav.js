@@ -5,15 +5,13 @@ import { Button} from 'antd';
 
 import { withRouter } from 'react-router-dom';
 
-const Nav = ({ logout,location, history }) => {
+const Nav = ({ logout}) => {
 
     return (
         <div className='navBar'>
             
             <div>
-            <Button onClick={() => history.push('/profile')}>Profile</Button>
-
-            <Button onClick={() => history.push(`${location.pathname}/addfriend`)}>Add Friend</Button>       
+  
             <Button onClick={logout}>Logout</Button>
             </div>
 
