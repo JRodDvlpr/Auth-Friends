@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 //Styling Library
-import { Button, Form, Spin, Input} from 'antd';
+import { Button, Form, Spin, Input, message, Icon} from 'antd';
 
 import axios from 'axios';
 
@@ -13,6 +13,10 @@ const Login = ({history}) => {
         password: ''
         
     });
+
+    const success = () => {
+        message.success('You have logged in successfully');
+    };
 
     // loader 
     const [isLoading, setIsLoading] = useState(false);
@@ -53,11 +57,14 @@ const Login = ({history}) => {
             <h1>{isLoading ? <Spin className='spinner'/> : 'Login'}</h1>
 
             <div className='loginInput'>
-            <Input type='text' name='username' value={inputs.username} onChange={inputHandle} placeholder="Username" required />
+            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+            type='text' name='username' value={inputs.username} onChange={inputHandle} placeholder="Username" required />
 
-            <Input type='password' name='password' value={inputs.password} onChange={inputHandle} placeholder='Password' required />
+            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)'}}/>} type='password' name='password' value={inputs.password} onChange={inputHandle} placeholder='Password' required />
+
             </div>
-            <Button id='loginbtn' type="primary" icon="poweroff" htmlType="submit">Login</Button>
+
+            <Button id='loginbtn' type="primary" onClick={success}icon="poweroff" htmlType="submit">Login</Button>
 
 
         </Form>

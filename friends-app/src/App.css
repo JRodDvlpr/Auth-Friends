@@ -99,18 +99,23 @@ margin-top: 40px;
 
 }
 
-@media only screen and (max-width: 550px){
+#arrowDown {
+  margin-left: 48%;
+}
 
+#addFrienbtn{
+  margin: 20px;
+  
+}
+
+
+@media only screen and (max-width: 980px){
   .loginForm{
     margin: auto;
     margin-top: 60px;
     width: 60%;
     padding: 10px;
-    border: 1px solid lightcoral;
-  }
-  
-  .loginInput{
-    width: 90%;
+    border: 1px solid blue;
   }
 
   .friendsList{
@@ -123,29 +128,6 @@ margin-top: 40px;
     margin-top: 30px;
     height: auto;
   
-  }
-}
-
-
-@media only screen and (max-width: 600px){
-  .friendsList{
-    display: flex;
-    align-self: auto;
-    justify-content: space-around;
-    margin-top: 20px;
-    width: 60%;
-    margin: auto;
-    margin-top: 30px;
-    height: auto;
-  
-  }
-
-  .loginForm{
-    margin: auto;
-    margin-top: 60px;
-    width: 60%;
-    padding: 10px;
-    border: 1px solid lightblue;
   }
 }
 
@@ -171,13 +153,39 @@ margin-top: 40px;
   }
 }
 
-@media only screen and (max-width: 980px){
+@media only screen and (max-width: 600px){
+  .friendsList{
+    display: flex;
+    align-self: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    height: auto;
+  
+  }
+
   .loginForm{
     margin: auto;
     margin-top: 60px;
     width: 60%;
     padding: 10px;
-    border: 1px solid blue;
+    border: 1px solid lightblue;
+  }
+}
+@media only screen and (max-width: 550px){
+
+  .loginForm{
+    margin: auto;
+    margin-top: 60px;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid lightcoral;
+  }
+  
+  .loginInput{
+    width: 90%;
   }
 
   .friendsList{
@@ -185,10 +193,25 @@ margin-top: 40px;
     align-self: auto;
     justify-content: space-around;
     margin-top: 20px;
-    width: 50%;
+    width: 100%;
     margin: auto;
     margin-top: 30px;
     height: auto;
   
   }
+
+  #editBtn{
+    margin-top: 20px;
+  }
+
+  .editInput{
+    margin-bottom: 5px;
+  }
+
+  #btnEdit{
+    margin: 5px;
+  }
 }
+
+
+

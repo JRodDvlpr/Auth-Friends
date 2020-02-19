@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 import {axiosWithAuth } from './axiosWithAuth';
 
-import { Card} from 'antd';
+import { Card, Button, Input, Form } from 'antd';
 
 const FriendsList = props => {
+
     const [edit, setEdit] = useState(false);
 
     const [dataID, setDataID] = useState()
@@ -16,8 +17,13 @@ const FriendsList = props => {
 
     })
 
+    
+
+  // removes any user added to the list sends the request to the DB
     const removeUser = (userID) => {
+
         // setFriends(friends.filter(friends => friends.id !== itemId));
+
         console.log(userID)
         axiosWithAuth().delete(`/friends/${userID}`)
         .then(res =>{
@@ -28,12 +34,15 @@ const FriendsList = props => {
         .catch(err => console.log(err));
     }
     
-    const handleSubmit = (e) => {
-        e.preventDefault()
+
+    //sends any edit back to the db regardless if nothing was entered.
+    const handleSubmit = () => {
+       
     
         axiosWithAuth().put(`/friends/${dataID}`, friend)
         .then(res => {
           props.setFriends(res.data)
+        
         })
         .catch(err => {
           console.log(err)
@@ -62,7 +71,7 @@ const FriendsList = props => {
     
 
         <div className='friendsList'>
-            {
+            
             <div className='usrFriend'>
                 <Card>
                     <p>{props.friend.name}</p>
@@ -71,23 +80,27 @@ const FriendsList = props => {
 
                     <div>
 
-                        <button 
-                        onClick={() => 
-                        removeUser(props.friend.id)}>Delete</button>
 
-                        <button 
+                        <Button id="btnEdit"
+                        onClick={() => editUser(props.friend.id)}>Edit</Button>
+                    
+                        <Button type='danger'
                         onClick={() => 
-                        editUser(props.friend.id)}>Edit</button>
+                        removeUser(props.friend.id)}>Delete</Button>
+                       
 
                     </div>
                 </Card>
             </div>
 
-                }
+            
 
-                {edit && (
-                <form onSubmit={handleSubmit}>
-                    <input
+            {edit && (
+                
+                <Card>
+                <Form className='editform' >
+
+                <Input className='editInput'
                     type="text"
                     name="name"
                     placeholder="name"
@@ -95,7 +108,7 @@ const FriendsList = props => {
                     onChange={inputChange}
                     required
                 />
-                <input
+                <Input className='editInput'
                     type="text"
                     name="age"
                     placeholder="age"
@@ -103,7 +116,7 @@ const FriendsList = props => {
                     onChange={inputChange}
                     required
                 />
-                <input
+                <Input className='editInput'
                     type="email"
                     name="email"
                     placeholder="email"
@@ -111,11 +124,13 @@ const FriendsList = props => {
                     onChange={inputChange}
                     required
                 />
-                <button onClick={handleSubmit}>Edit Friend</button>
-                </form>
+                <Button id="editBtn" onClick={handleSubmit}>Edit Friend</Button>
+                </Form>
+                </Card>
             )}
+            
         </div>
-    )    
+    )  
 }
 
 export default FriendsList;

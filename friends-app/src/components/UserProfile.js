@@ -9,7 +9,7 @@ import {axiosWithAuth } from './axiosWithAuth';
 import Nav from './Nav';
 import FriendsList from './FriendsList';
 
-import { Spin, Form, Input, Button } from 'antd';
+import { Spin, Form, Input, Button, Icon, Collapse } from 'antd';
 
 const UserProfile = props => {
 
@@ -19,10 +19,12 @@ const UserProfile = props => {
 
   //Form inputs for new friends
   const [newFriends, setNewFriends] = useState({
-    name: '',
+    name: '', 
     age: '',
     email: ''
   });
+
+  const {Panel} = Collapse;
 
   // fetching data 
   useEffect(() => {
@@ -109,7 +111,7 @@ const UserProfile = props => {
       onChange={handleInput} 
       placeholder="Enter Email" required />
 
-      <Button 
+      <Button id='addFrienbtn'
       type="primary" 
       htmlType="submit" 
       >Add Friend</Button>
@@ -117,6 +119,12 @@ const UserProfile = props => {
     </Form>
 
        {/* displays all my friends */}
+       <Collapse
+      bordered={false}
+      defaultActiveKey={['1']}
+      expandIcon={({ isActive }) => <Icon id="arrowDown" type="down-circle" theme="twoTone" rotate={isActive ? 90 : 0} />}
+      >
+       <Panel>
        <div>
          <h1>Friends List</h1>
       <div className='friends'>
@@ -128,9 +136,12 @@ const UserProfile = props => {
             setFriends={setFriends}
             
             />
+            
         ))}
       </div>
       </div>
+      </Panel>
+      </Collapse>
       {/* <PrivateRoute exact path="/friends/:id">
         <AddFriend />
       </PrivateRoute> */}

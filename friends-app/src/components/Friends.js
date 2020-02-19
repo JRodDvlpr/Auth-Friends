@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './axiosWithAuth';
 
 //Styling  Library
-// import { Button, Form, Input } from 'antd';
+import { Card } from 'antd';
 
 
 
@@ -25,11 +25,11 @@ const Friend = (props) => {
     }, [props.match.url])
 
   return (
-    <div>
+    <Card>
       <h2>{friend.name}</h2>
       <p>age: {friend.age}</p>
       <p>email: {friend.email}</p>
-    </div>
+    </Card>
   )
 }
 
